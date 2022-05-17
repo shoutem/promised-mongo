@@ -177,8 +177,6 @@ var Database = (function () {
           }
 
           if (config.auth) {
-            server.addAuthProvider('mongocr', new MongoCR());
-            server.addAuthProvider('ScramSHA1', new ScramSHA1());
             // authenticate on connect
             server.on('connect', function (server) {
               var providerName = options.authMechanism ? options.authMechanism : 'mongocr';
